@@ -21,7 +21,11 @@ builder.AddPiranha(options =>
      */
     options.AddRazorRuntimeCompilation = true;
 
-    options.UseCms();
+    options.UseCms(routing =>
+    {
+        // MVC owns the public home page; Piranha still handles /news and releases.
+        routing.UseStartpageRouting = false;
+    });
     options.UseManager();
 
     options.UseFileStorage(naming: Piranha.Local.FileStorageNaming.UniqueFolderNames);
