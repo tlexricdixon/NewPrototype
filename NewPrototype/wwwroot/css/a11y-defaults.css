@@ -1,0 +1,131 @@
+﻿/*
+ * A11yDefaults.Mvc - Accessibility Defaults Stylesheet
+ * 
+ * This stylesheet provides utility classes to improve web accessibility
+ * in accordance with WCAG (Web Content Accessibility Guidelines) standards.
+ */
+
+/*
+ * .a11y-target-min
+ * 
+ * Ensures interactive elements meet the WCAG 2.2 Target Size (Minimum)
+ * threshold of 24x24 CSS pixels for improved usability on touch devices
+ * and for users with motor impairments.
+ */
+:where(.a11y-target-min) {
+    min-inline-size: 24px;
+    min-block-size: 24px;
+}
+
+/*
+ * .a11y-target-enhanced
+ * 
+ * Provides the larger WCAG Target Size (Enhanced) threshold of 44x44 CSS
+ * pixels, offering better accessibility for users with motor impairments
+ * or those using touch devices.
+ */
+:where(.a11y-target-enhanced) {
+    min-inline-size: 44px;
+    min-block-size: 44px;
+}
+
+/*
+ * Touch action manipulation for target size classes
+ * 
+ * Lets browsers know these are direct manipulation targets so taps respond
+ * promptly without changing target sizing or focus behavior.
+ */
+:where(.a11y-target-min, .a11y-target-enhanced) {
+    touch-action: manipulation;
+}
+
+/*
+ * .a11y-link-hint
+ * 
+ * Provides a slightly smaller font size for supplementary link text
+ * or hints (e.g., "opens in new window"), maintaining readability while
+ * visually distinguishing helper text from primary content.
+ */
+:where(.a11y-link-hint) {
+    font-size: 0.875em;
+}
+
+/*
+ * .a11y-focus-ring
+ *
+ * Provides a consistent keyboard focus indicator for interactive elements.
+ * The outline uses system colors first so it remains visible in forced-color
+ * and high-contrast modes.
+ */
+:where(.a11y-focus-ring:focus) {
+    outline: 3px solid Highlight;
+    outline-offset: 3px;
+}
+
+:where(.a11y-focus-ring:focus:not(:focus-visible)) {
+    outline: none;
+}
+
+:where(.a11y-focus-ring:focus-visible) {
+    box-shadow: 0 0 0 2px Canvas, 0 0 0 5px Highlight;
+    outline: 3px solid Highlight;
+    outline-offset: 3px;
+}
+
+@media (forced-colors: active) {
+    :where(.a11y-focus-ring:focus-visible) {
+        box-shadow: none;
+    }
+}
+
+/*
+ * .a11y-sr-only
+ * 
+ * Screen reader only class that visually hides content while keeping it
+ * accessible to assistive technologies. This technique follows best practices
+ * for providing additional context to screen reader users without affecting
+ * the visual layout.
+ * 
+ * Use cases:
+ * - Additional context for icon-only buttons
+ * - Descriptive labels for form fields
+ * - Skip links for keyboard navigation
+ */
+:where(.a11y-sr-only) {
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/*
+ * .a11y-skip-link
+ *
+ * Keeps skip links out of the visual flow until keyboard focus reaches them,
+ * then presents a high-contrast link at the top of the viewport.
+ */
+:where(.a11y-skip-link) {
+    background: Canvas;
+    border: 2px solid currentColor;
+    color: CanvasText;
+    font-weight: 700;
+    inset-block-start: 0.75rem;
+    inset-inline-start: 0.75rem;
+    padding: 0.75rem 1rem;
+    position: fixed;
+    transform: translateY(calc(-100% - 1rem));
+    transition: transform 120ms ease-out;
+    z-index: 10000;
+}
+
+:where(.a11y-skip-link:focus, .a11y-skip-link:focus-visible) {
+    outline: 3px solid currentColor;
+    outline-offset: 3px;
+    transform: translateY(0);
+}

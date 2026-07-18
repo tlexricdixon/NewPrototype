@@ -1,0 +1,1450 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+a.skip {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+
+/*New by Richard*/
+.errorbody {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.error-container {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 90%;
+}
+
+    .error-container h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #c0392b;
+    }
+
+    .error-container p {
+        font-size: 1.1rem;
+        margin: 8px 0;
+    }
+
+    .error-container .request-id {
+        margin-top: 20px;
+        font-size: 0.9rem;
+        color: #888;
+    }
+
+    .error-container a {
+        color: #2980b9;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        .error-container a:hover {
+            text-decoration: underline;
+        }
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    transition: all 1s ease-in-out;
+}
+
+.section {
+    height: 350px;
+    width: 700px;
+    transition: all 1s ease-in-out;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+#bannerPhoto {
+    height: 13em;
+}
+
+#bannerContainer {
+    padding-left: 0;
+    padding-right: 0;
+    background-image: url('/StaticFiles/img/ISP Website Banner_2024.jpg');
+    height: 13rem;
+    background-position: initial;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /*  background-size: cover;*/
+    position: relative;
+}
+
+.video {
+    width: 100%;
+}
+
+#ispFooter {
+    background: rgba(52,52,52,1);
+}
+
+.navbar {
+    background: #75674d;
+    color: #ffffff;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: .8rem;
+    overflow: visible;
+}
+
+.nav-pills .nav-link {
+    padding: .15rem .5rem 1rem .5rem;
+    height: 1.5rem;
+    color: black;
+    border: 1px solid black;
+    margin: .25rem .5rem 1rem .5rem;
+    font-size: .75rem;
+}
+
+    .nav-pills .nav-link.active {
+        color: black;
+        background-color: #dfd8c8;
+    }
+
+    /*.right-column {
+        max-width: 18rem;
+        margin: 0 auto;
+    }*/
+.right-column {
+    max-width: 20rem; /* increased from 18rem so long link text has a bit more room */
+    margin: 0 auto;
+    word-break: normal; /* avoid breaking inside words */
+    overflow-wrap: break-word; /* allow wrapping at natural word boundaries */
+}
+
+    .right-column a,
+    .right-column .quick-link-text {
+        white-space: normal; /* allow links to wrap normally */
+    }
+.quick-link-header {
+    background: #75674d;
+    font-weight: 600;
+    text-align: center !important;
+    font-size: 1.25em;
+}
+
+.quick-link-body {
+    background-color: rgba(159,207,234,1);
+    line-height: 1;
+}
+
+    .quick-link-body .row {
+        padding-bottom: 1rem;
+    }
+
+.quick-link-img {
+    height: 50px;
+    width: 50px;
+}
+
+.mailto-quick-link-text {
+    font-size: .9rem;
+    padding-top: .25rem !important;
+    color: black;
+    display: inline-block;
+    min-height: 24px;
+    min-width: 24px;
+    padding: 4px 8px;
+}
+
+.quick-link-text {
+    font-size: .9rem;
+    color: black;
+    display: inline-block;
+    min-height: 24px;
+    min-width: 24px;
+    padding: 4px 8px;
+}
+
+#facebook {
+    height: 40px;
+    width: 40px;
+}
+
+#twitter {
+    height: 30px;
+    width: 33px;
+}
+
+#youTube {
+    height: 30px;
+    width: 43px;
+}
+
+.footer a {
+    color: white;
+}
+
+.ispHeader {
+    background-color: #75674d;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.ispSubHeader {
+    background-color: #75674d;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.accordion > .card > .card-header {
+    padding: 0;
+}
+
+    .accordion > .card > .card-header > h2 > button {
+        white-space: initial;
+    }
+.btn-link {
+    color: #002c5c;
+}
+.ciiLink {
+    color: white;
+    text-decoration: underline;
+}
+
+    .ciiLink:visited {
+        color: white;
+    }
+    .ciiLink:hover {
+        color: white;
+    }
+
+.ciiCover {
+    padding: 1rem .5rem;
+}
+
+.ispImpaired {
+    color: #006bff;
+}
+
+.ispUnderInfluence {
+    color: #a90000;
+}
+
+.forensicsLabPhoto {
+    border: solid black 3px;
+}
+
+.deiHistoryImage {
+    height: 20rem;
+}
+
+.imageContainer > img:hover {
+    /*height: 40rem;*/
+    /*-webkit-transform: scale(2,2);*/
+
+    -webkit-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+    opacity: 1;
+    transform: scale(2.5);
+    -webkit-transform: scale(2.5); /* Safari and Chrome */
+}
+
+@media print {
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 100px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    height: 150px;
+    line-height: 40px;
+}
+
+
+
+******************************Search Box Styles***********************
+.gsc-search-button-v2 {
+    padding: 6px 10px !important;
+}
+
+.gsc-control-cse {
+    padding: 0.3em !important;
+    border: none;
+}
+
+form.gsc-search-box {
+    margin-bottom: 0 !important;
+}
+
+table.gsc-search-box {
+    margin-bottom: 0 !important;
+}
+
+
+/*******************Animated Text in Header Photo*********************/
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+@keyframes fadeInAndOut {
+    0%, 100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+.integrity {
+    color: white;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 75px;
+    position: absolute;
+    top: 0;
+    left: 17rem;
+    opacity: 0;
+    animation-name: fadeInAndOut;
+    animation-timing-function: ease;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    text-shadow: 1px 3px 20px black;
+}
+
+.service {
+    color: white;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 75px;
+    position: absolute;
+    top: 0;
+    left: 23rem;
+    opacity: 0;
+    animation-name: fadeInAndOut;
+    animation-timing-function: ease;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-delay: 4s;
+    text-shadow: 1px 3px 20px black;
+}
+
+.pride {
+    color: white;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 75px;
+    position: absolute;
+    top: 0;
+    left: 26rem;
+    opacity: 0;
+    animation-name: fadeInAndOut;
+    animation-timing-function: ease;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-delay: 8s;
+    text-shadow: 1px 3px 20px black;
+}
+
+.ISP {
+    color: white;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 40px;
+    position: relative;
+    top: -1rem;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-timing-function: ease;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-delay: 12s;
+    text-shadow: 0px 3px 10px black;
+}
+
+#grantFormCard {
+    padding: 0;
+}
+
+.directorsPhoto {
+    height: 10rem;
+    width: 6.667rem;
+}
+
+.directorsName {
+    padding-top: 8rem;
+    margin-bottom: 0;
+}
+
+/****************************Carousel Sizing***************************/
+/*#carouselSizing {
+    height: 24rem;
+}*/
+/****************************Mobile Sizing***************************/
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (max-width: 850px) {
+    /*#carouselSizing {
+        height: 12rem;
+    }*/
+    #bannerContainer {
+        background-position: center;
+    }
+
+    .integrity {
+        font-size: 50px;
+        left: 0;
+    }
+
+    .service {
+        font-size: 50px;
+        left: 2rem;
+    }
+
+    .pride {
+        font-size: 50px;
+        left: 4rem;
+    }
+
+    .directorsPhoto {
+        height: 8rem;
+        width: 5.33rem;
+    }
+
+    .directorsName {
+        padding-top: 6rem;
+        margin-bottom: 0;
+    }
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+
+    .youtubevideo iframe {
+        width: 100%;
+    }
+
+    #facebook {
+        height: 30px;
+        width: 30px;
+    }
+
+    #twitter {
+        height: 35px;
+        width: 35px;
+    }
+
+    #youTube {
+        height: 25px;
+        width: 31px;
+    }
+
+    .directorsName {
+        padding-top: 0.5rem;
+        margin-bottom: 0;
+    }
+
+    .directorsPhoto {
+        height: 8rem;
+        width: 5.33rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #mediaCard {
+        max-width: 30%;
+    }
+}
+
+
+
+.foidAssist {
+    font-size: small;
+}
+
+/* Makes the animation pause on hover */
+.moving-text:hover {
+    animation-play-state: paused;
+}
+
+/* The animation */
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* media query to enable animation for only those who want it */
+@media (prefers-reduced-motion: no-preference) {
+    .moving-text {
+        animation: marquee 35s linear infinite;
+    }
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Podcast styles */
+/* Container for the whole list */
+.podcast-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual podcast item (Flexbox used here for row layout) */
+.podcast-item {
+    display: flex;
+    align-items: center; 
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    gap: 20px; 
+}
+
+/* Podcast Image Styling */
+.podcast-image {
+    width: 150px; 
+    height: 150px;
+    object-fit: cover; 
+    border-radius: 8px; 
+}
+
+/* Content Styling */
+.podcast-content {
+    flex: 1; 
+}
+
+.podcast-title {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #333;
+}
+
+    .podcast-title:hover {
+        color: #007bff; 
+    }
+
+.podcast-description {
+    margin: 0;
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.logo-row {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+    .logo-row img {
+        height: 100px;
+        width: auto;
+    }
+
+.podcast-link {
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+    .podcast-link:focus {
+        outline: 3px solid #005a9c; 
+        outline-offset: 2px;
+    }
+
+    .podcast-link:hover {
+        transform: scale(1.1);
+    }
+
+.podcast-icon {
+    height: 40px; 
+    width: 40px;
+    border: none;
+}
+
+.move-right-padding {
+    padding-left: 5ch;
+}
+
+.human-traffick-header {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    background-color: #B00020;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+}
+.human-traffick-hotline {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+.info-banner {
+    background-color: #E8F4FF; 
+    border-left: 6px solid #1A73E8; 
+    padding: 16px 20px;
+    margin-bottom: 20px;
+}
+
+.info-banner-heading {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.25em;
+    text-align: center;
+}
+/* Base */
+a.inline-accessibility-link,
+a:not(.btn):not(.social-media-icon):not(.ciiLink):not(.nav-link):not(.head-buttons):not(.weglot_switcher):not(.quick-link-text):not(.footer-links):not(.dt-pager-link) {
+    color: #0056b3;
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: 0.08em;
+    text-decoration-line: underline;
+}
+
+    /* Hover */
+    a.inline-accessibility-link:hover,
+    a:not(.btn):not(.social-media-icon):not(.ciiLink):not(.nav-link):not(.head-buttons):not(.weglot_switcher):not(.quick-link-text):not(.footer-links):not(.dt-pager-link):hover {
+        color: #00618a;
+        text-decoration-thickness: 0.12em;
+    }
+
+    /* Focus */
+    a.inline-accessibility-link:focus,
+    a.inline-accessibility-link:focus-visible,
+    a:not(.btn):not(.social-media-icon):not(.ciiLink):not(.nav-link):not(.head-buttons):not(.weglot_switcher):not(.quick-link-text):not(.footer-links):not(.dt-pager-link):focus,
+    a:not(.btn):not(.social-media-icon):not(.ciiLink):not(.nav-link):not(.head-buttons):not(.weglot_switcher):not(.quick-link-text):not(.footer-links):not(.dt-pager-link):focus-visible {
+        outline: 3px solid #0a84ff;
+        outline-offset: 2px;
+        border-radius: 2px;
+    }
+
+    /* Visited */
+    a.inline-accessibility-link:visited,
+    a:not(.btn):not(.social-media-icon):not(.ciiLink):not(.nav-link):not(.head-buttons):not(.weglot_switcher):not(.quick-link-text):not(.footer-links):not(.dt-pager-link):visited {
+        color: #5a2ca0;
+    }
+
+    /* Focus */
+    a.inline-accessibility-link:focus,
+    a.inline-accessibility-link:focus-visible,
+    a:not(.btn):not(.social-media-icon):not(.ciiLink):not(.nav-link):not(.head-buttons):not(.weglot_switcher):not(.quick-link-text):not(.footer-links):not(.dt-pager-link):focus,
+    a:not(.btn):not(.social-media-icon):not(.ciiLink):not(.nav-link):not(.head-buttons):not(.weglot_switcher):not(.quick-link-text):not(.footer-links):not(.dt-pager-link):focus-visible {
+        outline: 3px solid #0a84ff;
+        outline-offset: 2px;
+        border-radius: 2px;
+    }
+
+    /* Visited - removed purple; use same base color or skip entirely */
+    /* Option 1: Subtle visited state (same as base) */
+    /*a.inline-accessibility-link:visited,
+    a:not(.btn):not(.nav-link):not(.head-buttons):not(.weglot_switcher):not(.quick-link-text):visited {
+        color: #003d99;
+    }*/
+    
+    /* Option 2: Remove visited styling entirely (modern approach - uncomment to use)*/
+    a.inline-accessibility-link:visited,
+    a:not(.btn):not(.social-media-icon):not(.ciiLink):not(.nav-link):not(.head-buttons):not(.weglot_switcher):not(.quick-link-text):not(.footer-links):not(.dt-pager-link):visited {
+        color: inherit;
+    }
+
+        /* optional: normalize the marker for some browsers */
+        .address li::marker {
+            content: "";
+        }
+/* Base link: keep it identifiable */
+.page-nav-link {
+  color: #0056b3;               /* Good contrast on white */
+  text-decoration: underline;   /* Helps recognition; don’t rely on color alone */
+  display: inline-block;        /* Gives the focus ring a box to wrap */
+  padding: 2px 4px;             /* Ensures focus indicator has enough area */
+  border-radius: 4px;           /* Optional, but matches focus styles below */
+}
+
+/* Pointer users: hover feedback is fine, but not the only indicator */
+.page-nav-link:hover {
+  outline: 3px solid #000000;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Keyboard users: the critical part */
+.page-nav-link:focus-visible {
+  /* Dual ring to increase indicator area and contrast against adjacent colors */
+  outline: 3px solid #000000;          /* Primary focus ring */
+  outline-offset: 3px;
+  box-shadow:
+    0 0 0 6px #0a84ff33;               /* Soft outer halo increases area */
+  background-color: #e6f2ff;           /* Optional: boosts indicator area/contrast */
+  border-radius: 4px;
+}
+
+/* Fallback for browsers without :focus-visible support */
+.page-nav-link:focus {
+  outline: 3px solid #000000;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Optional: visually indicate current page in nav for all users */
+    .page-nav-link[aria-current="page"] {
+        font-weight: 700;
+        text-decoration-thickness: 2px;
+    }
+
+    /* Pointer users: hover feedback is fine, but not the only indicator */
+    .nav-link:hover {
+        outline: 3px solid #000000;
+        outline-offset: 2px;
+        border-radius: 4px;
+    }
+
+    /* Keyboard users: the critical part */
+    .nav-link:focus-visible {
+        /* Dual ring to increase indicator area and contrast against adjacent colors */
+        outline: 3px solid #000000; /* Primary focus ring */
+        outline-offset: 3px;
+        box-shadow: 0 0 0 6px #000000; /* Soft outer halo increases area */
+        background-color: #e6f2ff; /* Optional: boosts indicator area/contrast */
+        border-radius: 4px;
+    }
+/* Fallback for browsers without :focus-visible support */
+.nav-link:focus {
+    outline: 3px solid #000000;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+.quick-header-buttons {
+    min-width: 25px;
+    min-height: 25px;
+}
+.head-buttons {
+    min-height: 44px;
+    max-height: 55px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+/* Override Bootstrap btn-link blue on focus/active for navbar buttons */
+.navbar .head-buttons.btn-link:focus,
+.navbar .head-buttons.btn-link:active,
+.navbar .head-buttons.btn-link:focus:active,
+.navbar .nav-link.btn-link:focus,
+.navbar .nav-link.btn-link:active,
+.navbar .nav-link.btn-link:focus:active {
+    color: #000000 !important;
+    text-decoration: none;
+    box-shadow: none;
+}
+.header-buttons {
+    max-width: 55px;
+    max-height: 55px;
+}
+
+.gcse-search {
+    background-color: #000000 !important;
+    border: none !important;
+    padding: 8px 12px !important;
+    border-radius: 4px !important;
+}
+
+.gsc-control-cse {
+    background-color: #000000 !important;
+    border: none !important;
+    padding: 8px 12px !important;
+    border-radius: 4px !important;
+}
+
+.gsc-above-wrapper-area-backfill-container {
+    background-color: #000 !important;
+    border: none !important;
+    padding: 8px 12px !important;
+    border-radius: 4px !important;
+}
+
+.gsc-control-cse-en {
+    background-color: #000000 !important;
+    border: none !important;
+    padding: 8px 12px !important;
+    border-radius: 4px !important;
+}
+
+.gsc-results-wrapper-overlay {
+    background-color: #f0f0f0 !important;
+    border: none !important;
+    padding: 8px 12px !important;
+    border-radius: 4px !important;
+}
+ 
+.gsc-orderby-container,
+.gsc-option-menu-container,
+.gsc-selected-option-container,
+.gsc-option-menu-invisible {
+    display: none !important;
+}
+
+.gsc-refinementsAreaInvisible {
+    display: none !important;
+}
+ 
+.gsc-results-close-btn {
+    display: none !important;
+}
+ 
+.gsc-above-wrapper-area-invisible,
+.gsc-above-wrapper-area-backfill-container,
+.gsc-above-wrapper-area-container {
+    display: none !important;
+}
+
+.gsc-adBlockInvisible {
+    display: none !important;
+}
+
+.gsc-tabsAreaInvisible {
+    display: none !important;
+}
+/* Tighten up spacing inside results root */
+.gsc-resultsRoot.gsc-tabData.gsc-tabdActive .gsc-expansionArea {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.gsc-tabHeader .gsc-inline-block .gsc-tabhActive {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.social-media-icon {
+    min-height: 30px;
+    min-width: 30px;
+    max-height: 30px;
+    max-width: 30px;
+    text-decoration: none !important;
+}
+.footer-links{
+    color: #ffffff;
+}
+/* WCAG 2.5.8 – Weglot language switcher minimum target size (24x24 px) */
+#weglot_here .country-selector a,
+#weglot_here .wgcurrent a,
+.wg-drop.country-selector a,
+a[id^="weglot-language-"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 24px !important;
+    min-width: 24px !important;
+    line-height: 24px !important;
+    font-size: 18px !important;
+    padding: 2px 15px 2px 10px !important;
+    box-sizing: border-box !important;
+}
+/* Extra right padding on the selected language so text doesn't crowd the arrow */
+.wg-drop.country-selector .wgcurrent a {
+    padding-right: 60px !important;
+}
+/* Nudge the dropdown arrow a bit further from the text */
+.wg-drop.country-selector .wgcurrent::after {
+    right: 18px !important;
+}
+
+.my-h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    line-height: 1.3;
+}
+
+.btn-primary {
+    background-color: #005fcc;
+}
+.my-h5 {
+    font-size: 1.25rem; /* or whatever your h5 size is */
+    font-weight: 500;
+    margin-bottom: .5rem;
+}
+
+.navbar-nav .nav-link {
+    min-height: 44px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: .5rem .75rem;
+    white-space: normal;
+}
+.navbar-collapse.show {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Nav HTML should use: <nav class="navbar navbar-expand-lg ..."> */
+@media (max-width: 1079.98px) {
+    .navbar-expand-lg .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: none !important;
+        flex-basis: 100%;
+    }
+
+    .navbar-expand-lg .navbar-collapse.show {
+        display: block !important;
+    }
+
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link,
+    .navbar-expand-lg .navbar-nav .btn-link.head-buttons {
+        width: 100%;
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        position: static;
+        float: none;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1080px) {
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row;
+    }
+}
+@media (max-width: 1079.98px) {
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: column !important;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: none !important;
+    }
+
+        .navbar-expand-lg .navbar-collapse.show {
+            display: block !important;
+        }
+}
+
+.dataTables_wrapper .dataTables_paginate .page-item.active .page-link {
+    color: #fff !important;
+}
+/* The base container */
+.embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+    /* The magic spacer that creates the 4:3 height */
+    .embed-responsive::before {
+        display: block;
+        content: "";
+        /* (3 / 4) * 100 = 75% */
+        padding-top: 75%;
+    }
+
+    /* The inner element (iframe, video, object, embed) */
+    .embed-responsive .embed-responsive-item,
+    .embed-responsive iframe,
+    .embed-responsive embed,
+    .embed-responsive object,
+    .embed-responsive video {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    /* Specific 4:3 modifier */
+.embed-responsive-4by3::before {
+    padding-top: 75%;
+}
+
+/* Target the active page number */
+/*.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    background: #007bff !important;*/ /* Your btn_primary color */
+    /*color: #fff !important;
+    border: 1px solid #007bff !important;
+    border-radius: 4px;
+}*/
+
+/* Target the inactive (not active) page numbers */
+/*.dataTables_wrapper .dataTables_paginate .paginate_button {
+    background: #005fcc !important;*/ /* Your btn_primary color */
+    /*color: #fff !important;
+    border: 1px solid #007bff !important;
+    border-radius: 4px;
+    margin: 2px;
+}*/
+
+    /* Target the hover state for inactive buttons */
+    /*.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+        background: #0056b3 !important;*/ /* Darker blue for hover */
+        /*color: #fff !important;
+        border: 1px solid #0056b3 !important;
+    }*/
+.page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #005fcc;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #005fcc;
+    border-color: #007bff;
+}
+.scrollable-focusable:focus {
+    outline: 3px solid #005a9e;
+    outline-offset: 2px;
+}
+.row_inner {
+    margin: 0 auto;
+    width: min(1160px,100%)
+}
+
+.module_row.fullheight .module_subrow, .module_row.fullwidth > .row_inner {
+    max-width: 100%;
+    width: 100%
+}
+
+.human-trafficking-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .human-trafficking-card:hover,
+    .human-trafficking-card:focus {
+        transform: translateY(-4px);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.2) !important;
+        outline: 2px solid #007bff; /* matches btn-danger, meets WCAG focus contrast */
+        outline-offset: 2px;
+    }
+.accordion-toggle-button {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    width: 100%;
+    text-decoration: none;
+}
+
+    .accordion-toggle-button:hover,
+    .accordion-toggle-button:focus {
+        text-decoration: underline;
+    }
+
+.accordion-icon {
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+}
+
+#fallenOfficers {
+    font-family: "Times New Roman", Times, serif;
+    max-width: 1600px;
+    margin-inline: auto;
+}
+
+.fallen-officer-card {
+    background-color: #2d0357;
+    color: #fff;
+    border: none;
+    /*border-radius: 0.75rem;*/
+    min-height: 220px;
+    box-shadow: none;
+}
+
+    .fallen-officer-card .card-title,
+    .fallen-officer-card li {
+        color: #fff;
+    }
+
+    .fallen-officer-card .card-body {
+        padding: 2rem 1.25rem;
+    }
+
+    .fallen-officer-card .card-title {
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 1.25rem;
+    }
+
+    .fallen-officer-card ul {
+        margin-bottom: 0;
+    }
+
+    .fallen-officer-card li {
+        color: #fff;
+        margin-bottom: 0.35rem;
+    }
+
+.fallen-officers-grid {
+    background-color: #d6c8e2;
+    padding: 2rem 1.5rem;
+    border-radius: 0.75rem;
+}
+
+.fallen-officer-col {
+    margin-bottom: 1.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+.fallen-officer-tile {
+    background-color: #f4f1f7;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.pdf-preview-link {
+    display: block;
+    max-width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.pdf-thumbnail {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 0.35rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
+    margin-bottom: 0.75rem;
+}
+
+.pdf-preview-title {
+    display: inline-block;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.pdf-preview-link:hover .pdf-preview-title,
+.pdf-preview-link:focus .pdf-preview-title {
+    text-decoration-thickness: 0.15em;
+}
+
+.pdf-preview-link:focus {
+    outline: 3px solid #005ea8;
+    outline-offset: 4px;
+    border-radius: 0.35rem;
+}
+
+.internship-content {
+    max-width: 700px;
+}
+.cookie-consent-floating {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 9999;
+    width: min(380px, calc(100vw - 2rem));
+    padding: 1rem;
+    background-color: #fff;
+    color: #212529;
+    border: 1px solid #6c757d;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+}
+
+.cookie-consent-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+}
+
+.cookie-consent-text {
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.cookie-consent-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cookie-consent-floating a {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+    .cookie-consent-floating a:focus,
+    .cookie-consent-floating button:focus {
+        outline: 3px solid #005ea8;
+        outline-offset: 2px;
+    }
+
+@media (max-width: 575.98px) {
+    .cookie-consent-floating {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        width: auto;
+    }
+
+    .cookie-consent-actions {
+        justify-content: stretch;
+    }
+
+        .cookie-consent-actions .btn {
+            width: 100%;
+        }
+}
+/* Bootstrap 4 ISP accessible outline primary button */
+.btn-outline-primary-isp {
+    color: #0000ff;
+    background-color: #ffffff;
+    background-image: none;
+    border-color: #0000ff;
+}
+
+    .btn-outline-primary-isp:hover,
+    .btn-outline-primary-isp:focus,
+    .btn-outline-primary-isp:active,
+    .btn-outline-primary-isp.active {
+        color: #fff;
+        background-color: #005fcc;
+        border-color: #005fcc;
+    }
+
+    .btn-outline-primary-isp:focus,
+    .btn-outline-primary-isp.focus,
+    .btn-outline-primary-isp:focus-visible {
+        outline: 3px solid #ffbf47;
+        outline-offset: 2px;
+        box-shadow: none;
+    }
+
+    .btn-outline-primary-isp.disabled,
+    .btn-outline-primary-isp:disabled {
+        color: #003f7f;
+        background-color: transparent;
+        border-color: #003f7f;
+        opacity: .65;
+    }
+/* Bootstrap 4 ISP branded accessible primary button */
+.btn-isp {
+    color: #ffffff;
+    background-color: #75674d;
+    border-color: #75674d;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.25rem;
+    border-radius: 0;
+}
+
+    .btn-isp:hover,
+    .btn-isp:focus,
+    .btn-isp:active,
+    .btn-isp.active {
+        color: #ffffff;
+        background-color: #5f533f;
+        border-color: #5f533f;
+        text-decoration: none;
+    }
+
+    .btn-isp:focus,
+    .btn-isp.focus,
+    .btn-isp:focus-visible {
+        outline: 3px solid #ffbf47;
+        outline-offset: 2px;
+        box-shadow: none;
+    }
+.btn-outline-isp {
+    color: #75674d;
+    background-color: #ffffff;
+    background-image: none;
+    border-color: #75674d;
+}
+
+    .btn-outline-isp:hover,
+    .btn-outline-isp:focus,
+    .btn-outline-isp:active,
+    .btn-outline-isp.active {
+        color: #fff;
+        background-color: #75674d;
+        border-color: #75674d;
+    }
+
+    .btn-outline-isp:focus,
+    .btn-outline-isp.focus,
+    .btn-outline-isp:focus-visible {
+        outline: 3px solid #ffbf47;
+        outline-offset: 2px;
+        box-shadow: none;
+    }
+
+    .btn-outline-isp.disabled,
+    .btn-outline-isp:disabled {
+        color: #003f7f;
+        background-color: transparent;
+        border-color: #003f7f;
+        opacity: .65;
+    }
+.accordion-toggle-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+    width: 100%;
+    text-decoration: none;
+}
+
+    .accordion-toggle-button .accordion-toggle-icon {
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+.facility-map-accordion .accordion-toggle-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    color: white;
+    background-color: #75674d;
+    font-weight: bold;
+    font-size: 1.25rem;
+    border-radius: 0;
+    text-decoration: none;
+    text-align: left;
+}
+
+.facility-map-accordion .accordion-toggle-button:hover,
+.facility-map-accordion .accordion-toggle-button:focus {
+    color: white;
+    text-decoration: none;
+}
+
+.facility-map-accordion .accordion-toggle-icon {
+    transition: transform .2s ease;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+    .facility-map-accordion .accordion-toggle-icon.rotated {
+        transform: rotate(180deg);
+    }
+.accordion-toggle-icon {
+    display: inline-block;
+    transition: transform .2s ease;
+    flex-shrink: 0;
+}
+
+    .accordion-toggle-icon.rotated {
+        transform: rotate(180deg);
+    }

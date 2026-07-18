@@ -1,0 +1,128 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "/Views/Shared/_Layout2.cshtml";
+}
+@await Html.PartialAsync("_carousel")
+@await Html.PartialAsync("_featuredServices")
+
+<div class="section-heading row" style="padding-bottom: 20px">
+    <section class="col-3">
+        <p>Popular services</p>
+        <h2 id="quick-actions-title">How can we help?</h2>
+    </section>
+    <section class="quick-actions col-7" aria-labelledby="quick-actions-title">
+        <div class="quick-actions__grid">
+            <a class="btn-isp-primary-rounded" href="#records" a11y-hit-target="@A11yTargetSize.Minimum">
+                Licenses & Permits
+            </a>
+            <a class="btn-isp-primary-rounded" href="#safety" a11y-hit-target="@A11yTargetSize.Minimum">
+                Reports & Records
+            </a>
+            <a class="btn-isp-primary-rounded" href="#services" a11y-hit-target="@A11yTargetSize.Minimum">
+                Traffic & Road Safety
+            </a>
+            <a class="btn-isp-primary-rounded" href="#contact" a11y-hit-target="@A11yTargetSize.Minimum">
+                Crime Reporting
+            </a>
+            <a class="btn-isp-primary-rounded" href="#contact" a11y-hit-target="@A11yTargetSize.Minimum">
+                Victim Resources
+            </a>
+            <a class="btn-isp-primary-rounded" href="#safety" a11y-hit-target="@A11yTargetSize.Minimum">
+                News
+            </a>
+            <a class="btn-isp-primary-rounded" href="#services" a11y-hit-target="@A11yTargetSize.Minimum">
+                Social Media
+            </a>
+            <a class="btn-isp-primary-rounded" href="#contact" a11y-hit-target="@A11yTargetSize.Minimum">
+                Contact Illinois State Police
+            </a>
+        </div>
+    </section>
+</div>
+<section aria-labelledby="page-title">
+    <div class="mb-5 mt-lg-1 row justify-content-center">
+        <div class="col-md-3 feature-card" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b0/Turning_road.jpg');">
+            <div class="row" style="background: rgba(0, 0, 0, 0.3); height: 100%;">
+                <div class="container" style="padding-top: 50px; padding-bottom: 50px; padding-left: 20px;">
+                    <h1 style="color: #ffffff; font-weight: bold;">Road Closures</h1>
+                    <img src="/img/state2b.png" width="200px" height="auto" title="IDOT Getting Around Illinois Logo" alt="IDOT Getting Around Illinois Logo">
+                </div>
+                <div class="bottom" style="padding-bottom: 25px; padding-left: 20px; ">
+                    <a href="https://www.gettingaroundillinois.com/RoadConstruction/index.html"
+                       target="_blank" 
+                       class="btn btn-isp-primary-rounded"
+                       rel="noopener noreferrer">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 feature-card" style="background-image: url('/img/download.webp');">
+            <div class="row" style="background: rgba(0, 0, 0, 0.3); height: 100%;">
+                <div class="container" style="padding-top: 50px; padding-bottom: 50px; padding-left: 20px;">
+                    <h1 style="color: #ffffff; font-weight: bold;"><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;">Amber Alert</span></h1>
+                    <img src="/img/amber-logo_0.png" width="200px" height="auto" title="Amber Alert Logo" alt="This is a small logo for Amber Alerts">
+                    <div style="color: #ffffff; margin-right: 20px;">
+                        <p>Statewide, cohesive effort between law enforcement and broadcasters, whose goal is to safely locate an abducted child within the critical two-to-three hour time period following an abduction.&nbsp;</p>
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+                <div class="bottom" style="padding-bottom: 25px; padding-left: 20px; ">
+                    <a href="https://www.amberillinois.org/"
+                       class="btn btn-isp-primary-rounded"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       alt="Learn More">Learn More&nbsp;&nbsp;</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 feature-card" style="background-image: url('/img/pexels-freestockpro-7444597.jpg');">
+            <div class="row" style="background: rgba(0, 0, 0, 0.3); height: 100%;">
+                <div class="container" style="padding-top: 50px; padding-bottom: 50px; padding-left: 20px;">
+                    <h1 style="color: #ffffff; font-weight: bold;">Sex Offender Registry</h1>
+                    <div style="color: #ffffff; margin-right: 20px;"><p>Information on convicted Sex Offenders or Child Predators in the state of Louisiana.&nbsp;</p></div> 
+                </div>
+                <div class="bottom" style="padding-bottom: 25px; padding-left: 20px;">
+                    <a href="https://sor.isp.illinois.gov/sorpublic/"
+                    class="btn btn-isp-primary-rounded" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    alt="Learn More">Learn More </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 feature-card" style="background-image: url('/img/330px-Lighting_barrage.jpg');">
+            <div class="row" style="background: rgba(0, 0, 0, 0.3); height: 100%;">
+                <div class="container" style="padding-top: 50px; padding-bottom: 50px; padding-left: 20px;">
+                    <h1 style="color: #ffffff; font-weight: bold;"><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;">Get a Game Plan</span></h1>
+                    <img src="/img/iemaohs.png" 
+                    width="200px" height="auto" 
+                    title="Get a Game Plan Logo" alt="This is a small logo for Get a Game Plan">
+                    <div style="color: #ffffff; margin-right: 20px;"><p>When severe weather strikes, will you be ready? It's critical that you are for your safety and your family's. The key is to<span>&nbsp;</span><em>have</em><span>&nbsp;a winning&nbsp;</span><em>game plan</em>.</p></div>
+                </div>
+
+                <div class="bottom" style="padding-bottom: 25px; padding-left: 20px; ">
+                    <a href="https://iemaohs.illinois.gov/"
+                    class="btn btn-isp-primary-rounded"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       alt="Learn More">Learn More </a> 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var carouselEl = document.getElementById('carouselExampleCaptions');
+            if (carouselEl && window.bootstrap && window.bootstrap.Carousel) {
+                new bootstrap.Carousel(carouselEl, {
+                    interval: 3000,
+                    ride: 'carousel'
+                });
+            }
+        });
+    </script>
+}
+

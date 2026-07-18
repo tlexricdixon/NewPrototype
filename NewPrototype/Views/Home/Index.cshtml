@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@await Html.PartialAsync("_carousel")
+@await Html.PartialAsync("_featuredServices")
+@await Html.PartialAsync("_popularServices")
+@await Html.PartialAsync("_indexBody")
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var carouselEl = document.getElementById('carouselExampleCaptions');
+            if (carouselEl && window.bootstrap && window.bootstrap.Carousel) {
+                new bootstrap.Carousel(carouselEl, {
+                    interval: 3000,
+                    ride: 'carousel'
+                });
+            }
+        });
+    </script>
+}
+

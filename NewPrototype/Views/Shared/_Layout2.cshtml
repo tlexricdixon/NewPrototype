@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NewProto</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/a11y-defaults.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site2.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/NewProto.styles.css" asp-append-version="true" />
+</head>
+<body >
+    <a a11y-skip-link a11y-skip-target="content">Skip to main content</a>
+    <header class="agency-header container-fluid">
+        @await Html.PartialAsync("_agencyBanner")   
+        <div class="header">
+            <div class="agency-masthead__inner d-flex align-items-center justify-content-between w-100">
+                <a class="agency-brand d-flex align-items-center text-decoration-none"
+                   asp-area=""
+                   asp-controller="Home"
+                   asp-action="Index"
+                   aria-label="Illinois State Police home">
+                    <span class="agency-brand__seal flex-shrink-0">
+                        <img src="~/img/isp_department seal (scaled).png"
+                             class="img-fluid"
+                             width="100"
+                             height="100"
+                             alt="" />
+                    </span>
+                    <span class="agency-brand__text">
+                        <span class="agency-brand__state">Illinois</span>
+                        <span class="agency-brand__name">State Police</span>
+                        <span class="agency-brand__name">Integrity, Service, Pride</span>
+                    </span>
+                </a>
+                <div class="isp-header-tools d-none d-lg-flex">
+                    <nav class="isp-utility-links"
+                         aria-label="Utility navigation">
+                        <a class="nav-link"
+                           asp-area=""
+                           asp-controller="Home"
+                           asp-action="Index"
+                           a11y-hit-target="@A11yTargetSize.Minimum">
+                            HOME
+                        </a>
+                        <a class="nav-link"
+                           asp-area=""
+                           asp-controller="Home"
+                           asp-action="Index2"
+                           a11y-hit-target="@A11yTargetSize.Minimum">
+                            HOME2
+                        </a>
+                        <a class="nav-link"
+                           asp-area=""
+                           asp-controller="Home"
+                           asp-action="Index3"
+                           a11y-hit-target="@A11yTargetSize.Minimum">
+                            HOME3
+                        </a>
+                        <a class="nav-link"
+                           asp-area=""
+                           asp-controller="Home"
+                           asp-action="Index4"
+                           a11y-hit-target="@A11yTargetSize.Minimum">
+                            HOME4
+                        </a>
+                    </nav>
+
+                    <form class="isp-header-search"
+                          role="search"
+                          onsubmit="return false;">
+                        <label for="demoHeaderSearch" class="sr-only">
+                            Search the Illinois State Police website
+                        </label>
+
+                        <input id="demoHeaderSearch"
+                               type="search"
+                               placeholder="Search"
+                               autocomplete="off" />
+
+                        <button type="button"
+                                aria-label="Search">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+              </div>
+        </div>
+    </header>
+    <main role="main" class="pb-3 container-fluid">
+        @RenderBody()
+    </main>
+
+    <div style="padding-top: 3rem;" class="container-fluid">
+        <partial name="_footer" />
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

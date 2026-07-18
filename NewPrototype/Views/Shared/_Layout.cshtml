@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NewProto</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/a11y-defaults.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/NewProto.styles.css" asp-append-version="true" />
+</head>
+<body class="container-fluid">
+    <a a11y-skip-link a11y-skip-target="content">Skip to main content</a>
+    <header class="agency-header">
+        @await Html.PartialAsync("_agencyBanner")
+        <div class="agency-masthead">
+            <div class="agency-masthead__inner d-flex align-items-center justify-content-between w-100">
+                <a class="agency-brand d-flex align-items-center text-decoration-none"
+                   asp-area=""
+                   asp-controller="Home"
+                   asp-action="Index"
+                   aria-label="Illinois State Police home">
+                    <span class="agency-brand__seal flex-shrink-0">
+                        <img src="~/img/isp_department seal (scaled).png"
+                             class="img-fluid"
+                             width="100"
+                             height="100"
+                             alt="" />
+                    </span>
+                    <span class="agency-brand__text">
+                        <span class="agency-brand__name">Illinois</span>
+                        <span class="agency-brand__state">State Police</span>
+                    </span>
+                </a>
+                <nav class="navbar navbar-expand-xxl ms-auto p-0"
+                     aria-label="Primary navigation">
+                    <button class="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#primaryNavigation"
+                            aria-controls="primaryNavigation"
+                            aria-expanded="false"
+                            aria-label="Toggle primary navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="primaryNavigation">
+                        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   asp-area=""
+                                   asp-controller="Home"
+                                   asp-action="Index"
+                                   a11y-hit-target="@A11yTargetSize.Minimum">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   asp-area=""
+                                   asp-controller="Home"
+                                   asp-action="Index2"
+                                   a11y-hit-target="@A11yTargetSize.Minimum">
+                                    Home2
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   href="#records"
+                                   a11y-hit-target="@A11yTargetSize.Minimum">
+                                    Records
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   href="#safety"
+                                   a11y-hit-target="@A11yTargetSize.Minimum">
+                                    Public Safety
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   href="#contact"
+                                   a11y-hit-target="@A11yTargetSize.Minimum">
+                                    Contact
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   a11y-sr-only-hint
+                                   a11y-hit-target="@A11yTargetSize.Minimum">
+                                    WCAG Guidance
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+
+    <div style="padding-top: 3rem;">
+        <partial name="_footer" />
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
