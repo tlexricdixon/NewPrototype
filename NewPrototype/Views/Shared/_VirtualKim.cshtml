@@ -1,0 +1,87 @@
+@{
+    var conceptNumber = ViewData["ConceptNumber"]?.ToString() ?? "1";
+    var conceptName = (ViewData["Concept"]?.ToString() ?? "command") switch
+    {
+        "service" => "Service",
+        "editorial" => "Editorial",
+        "civic" => "Civic",
+        _ => "Command"
+    };
+}
+
+<aside class="virtual-kim"
+       data-virtual-kim
+       data-concept-number="@conceptNumber"
+       data-concept-name="@conceptName">
+    <button class="virtual-kim__launcher"
+            type="button"
+            aria-expanded="false"
+            aria-controls="virtual-kim-panel"
+            data-kim-launcher>
+        <span class="virtual-kim__launcher-mark" aria-hidden="true">K</span>
+        <span>
+            <strong>Ask Kim</strong>
+            <small>Demo assistant</small>
+        </span>
+    </button>
+
+    <section class="virtual-kim__panel"
+             id="virtual-kim-panel"
+             role="complementary"
+             aria-labelledby="virtual-kim-title"
+             hidden
+             data-kim-panel>
+        <header class="virtual-kim__header">
+            <div class="virtual-kim__identity">
+                <span aria-hidden="true">K</span>
+                <div>
+                    <p id="virtual-kim-title">Virtual Kim</p>
+                    <small>PIO coordinator · DEMO</small>
+                </div>
+            </div>
+            <button class="virtual-kim__close"
+                    type="button"
+                    aria-label="Close Virtual Kim"
+                    data-kim-close>
+                <span aria-hidden="true">×</span>
+            </button>
+        </header>
+
+        <div class="virtual-kim__boundary">
+            <strong>Demo assistant</strong>
+            <span>Approved topics and links only. Kim does not accept reports or monitor live incidents.</span>
+        </div>
+
+        <div class="virtual-kim__messages"
+             role="log"
+             aria-live="polite"
+             aria-relevant="additions"
+             aria-atomic="false"
+             data-kim-messages></div>
+
+        <div class="virtual-kim__quick-actions" data-kim-quick-actions>
+            <p>Common topics</p>
+            <div>
+                <button type="button" data-kim-action="services-menu">Find an ISP Service</button>
+                <button type="button" data-kim-action="report-menu">Report Something</button>
+                <button type="button" data-kim-action="careers">Jobs and Careers</button>
+                <button type="button" data-kim-action="state-services-menu">Other State Services</button>
+            </div>
+        </div>
+
+        <form class="virtual-kim__form" data-kim-form>
+            <label for="virtual-kim-question">What are you looking for?</label>
+            <div>
+                <input id="virtual-kim-question"
+                       name="question"
+                       type="text"
+                       maxlength="160"
+                       autocomplete="off"
+                       placeholder="Try “crash report” or “FOID”"
+                       data-kim-input />
+                <button type="submit">Send</button>
+            </div>
+            <p>Do not enter personal, case, medical, or account information.</p>
+        </form>
+    </section>
+</aside>

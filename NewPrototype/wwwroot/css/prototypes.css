@@ -1671,6 +1671,314 @@ body.prototype img {
     }
 }
 
+.virtual-kim {
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    position: fixed;
+    right: max(1rem, env(safe-area-inset-right));
+    z-index: 1400;
+}
+
+.virtual-kim__launcher {
+    align-items: center;
+    background: var(--state-blue);
+    border: 3px solid var(--isp-white);
+    border-radius: 999px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.32);
+    color: var(--isp-white);
+    display: inline-flex;
+    gap: 0.7rem;
+    min-height: 58px;
+    padding: 0.45rem 1rem 0.45rem 0.5rem;
+    text-align: left;
+}
+
+.virtual-kim--open .virtual-kim__launcher {
+    display: none;
+}
+
+.virtual-kim__launcher-mark,
+.virtual-kim__identity > span {
+    align-items: center;
+    background: var(--isp-bronze);
+    border-radius: 50%;
+    color: var(--isp-black);
+    display: inline-flex;
+    flex: 0 0 auto;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    height: 44px;
+    justify-content: center;
+    width: 44px;
+}
+
+.virtual-kim__launcher > span:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.virtual-kim__launcher strong {
+    font-size: 0.92rem;
+    line-height: 1.1;
+}
+
+.virtual-kim__launcher small {
+    color: #e8edf3;
+    font-size: 0.68rem;
+    margin-top: 0.15rem;
+}
+
+.virtual-kim__panel {
+    background: var(--isp-white);
+    border: 2px solid var(--isp-black);
+    border-radius: 22px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    max-height: min(720px, calc(100dvh - 2rem));
+    overflow: hidden;
+    width: min(430px, calc(100vw - 2rem));
+}
+
+.virtual-kim__panel[hidden] {
+    display: none;
+}
+
+.virtual-kim__header {
+    align-items: center;
+    background: var(--state-blue);
+    color: var(--isp-white);
+    display: flex;
+    justify-content: space-between;
+    min-height: 78px;
+    padding: 0.8rem 0.9rem 0.8rem 1rem;
+}
+
+.virtual-kim__identity {
+    align-items: center;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.virtual-kim__identity > span {
+    height: 46px;
+    width: 46px;
+}
+
+.virtual-kim__identity p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+}
+
+.virtual-kim__identity small {
+    color: var(--isp-tan);
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-top: 0.35rem;
+    text-transform: uppercase;
+}
+
+.virtual-kim__close {
+    align-items: center;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.72);
+    border-radius: 50%;
+    color: var(--isp-white);
+    display: inline-flex;
+    flex: 0 0 auto;
+    font-size: 1.75rem;
+    height: 44px;
+    justify-content: center;
+    line-height: 1;
+    width: 44px;
+}
+
+.virtual-kim__boundary {
+    background: #fff3bd;
+    border-block-end: 1px solid #8a6d00;
+    color: #332800;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.72rem;
+    line-height: 1.4;
+    padding: 0.65rem 1rem;
+}
+
+.virtual-kim__boundary strong {
+    font-size: 0.68rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.virtual-kim__messages {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 0.85rem;
+    min-height: 140px;
+    overflow-y: auto;
+    padding: 1rem;
+    scrollbar-gutter: stable;
+}
+
+.virtual-kim__message {
+    border: 1px solid var(--line);
+    border-radius: 14px 14px 14px 3px;
+    line-height: 1.5;
+    max-width: 92%;
+    padding: 0.8rem 0.9rem;
+}
+
+.virtual-kim__message--kim {
+    align-self: flex-start;
+    background: var(--paper);
+}
+
+.virtual-kim__message--user {
+    align-self: flex-end;
+    background: var(--isp-blue);
+    border-color: #41667c;
+    border-radius: 14px 14px 3px 14px;
+}
+
+.virtual-kim__message p {
+    font-size: 0.88rem;
+    margin: 0;
+}
+
+.virtual-kim__message ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    list-style: none;
+    margin: 0.75rem 0 0;
+    padding: 0;
+}
+
+.virtual-kim__message a {
+    color: var(--state-blue);
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 800;
+    min-height: 24px;
+    text-decoration-thickness: 0.12em;
+    text-underline-offset: 0.16em;
+}
+
+.virtual-kim__quick-actions {
+    border-block-start: 1px solid var(--line);
+    padding: 0.8rem 1rem;
+}
+
+.virtual-kim__quick-actions > p {
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    margin: 0 0 0.55rem;
+    text-transform: uppercase;
+}
+
+.virtual-kim__quick-actions > div {
+    display: grid;
+    gap: 0.45rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+.virtual-kim__quick-actions button {
+    background: var(--isp-white);
+    border: 2px solid var(--state-blue);
+    border-radius: 8px;
+    color: var(--state-blue);
+    font-size: 0.72rem;
+    font-weight: 800;
+    min-height: 44px;
+    padding: 0.5rem 0.65rem;
+    text-align: left;
+}
+
+.virtual-kim__quick-actions button:hover {
+    background: var(--state-blue);
+    color: var(--isp-white);
+}
+
+.virtual-kim__form {
+    background: #eef3f7;
+    border-block-start: 1px solid #66727d;
+    padding: 0.8rem 1rem max(0.8rem, env(safe-area-inset-bottom));
+}
+
+.virtual-kim__form > label {
+    display: block;
+    font-size: 0.74rem;
+    font-weight: 850;
+    margin-bottom: 0.45rem;
+}
+
+.virtual-kim__form > div {
+    display: flex;
+}
+
+.virtual-kim__form input {
+    background: var(--isp-white);
+    border: 2px solid #4d5a66;
+    border-radius: 8px 0 0 8px;
+    color: var(--ink);
+    flex: 1 1 auto;
+    font-size: 0.88rem;
+    min-height: 46px;
+    min-width: 0;
+    padding: 0.65rem 0.75rem;
+}
+
+.virtual-kim__form input:focus-visible {
+    outline: 3px solid #005fcc;
+    outline-offset: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+.virtual-kim__form button {
+    background: var(--isp-black);
+    border: 2px solid var(--isp-black);
+    border-radius: 0 8px 8px 0;
+    color: var(--isp-white);
+    flex: 0 0 auto;
+    font-size: 0.75rem;
+    font-weight: 900;
+    padding-inline: 1rem;
+    text-transform: uppercase;
+}
+
+.virtual-kim__form > p {
+    color: #3f4b55;
+    font-size: 0.68rem;
+    line-height: 1.35;
+    margin: 0.45rem 0 0;
+}
+
+@media (max-width: 575.98px) {
+    .virtual-kim {
+        bottom: max(0.5rem, env(safe-area-inset-bottom));
+        right: max(0.5rem, env(safe-area-inset-right));
+    }
+
+    .virtual-kim__panel {
+        border-radius: 16px;
+        max-height: calc(100dvh - 1rem);
+        width: calc(100vw - 1rem);
+    }
+
+    .virtual-kim__quick-actions > div {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (forced-colors: active) {
     .prototype-search__field,
     .concept-editorial .prototype-search__field {
@@ -1684,11 +1992,20 @@ body.prototype img {
         outline: 3px solid Highlight;
         outline-offset: 3px;
     }
+
+    .virtual-kim__panel,
+    .virtual-kim__launcher,
+    .virtual-kim__message,
+    .virtual-kim__quick-actions button,
+    .virtual-kim__form input {
+        border-color: CanvasText;
+    }
 }
 
 @media print {
     .demo-amber,
     .prototype-header,
+    .virtual-kim,
     .press-release__footer,
     body.prototype > footer {
         display: none !important;

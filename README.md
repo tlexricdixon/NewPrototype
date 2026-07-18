@@ -14,6 +14,7 @@ This repository contains four responsive homepage concepts for an Illinois State
 - An HTML-first press-release type and public news archive.
 - Homepage cards populated from the latest published Piranha releases.
 - A Google-enhanced search form restricted to `isp.illinois.gov`.
+- Virtual Kim, a controlled 30-intent demonstration assistant using approved responses and destinations only.
 - Shared accessibility defaults for skip links, focus indicators, touch targets, semantic labels, reduced motion, color contrast, and Windows High Contrast Mode.
 
 ## Technology
@@ -91,17 +92,30 @@ These measures do not constitute a complete WCAG conformance claim. The prototyp
 - Piranha 12.2 currently resolves AutoMapper 12.0.1 transitively, which produces NuGet advisory `GHSA-rvv3-g6hj-g44x`. This accepted demo limitation must be resolved before any production deployment; do not assume the .NET 10 target removes it.
 - Production hosting will require approved identity, secrets management, persistent storage, monitoring, backup, security review, content governance, and an operational alert-publishing process.
 
-## Next milestone: Virtual Kim
+## Virtual Kim demo
 
-The next planned demonstration is **Virtual Kim**, a deliberately limited virtual PIO coordinator. Its answers will be restricted to the small set of approved pages and press releases included in this prototype.
+**Virtual Kim** is a deliberately limited virtual PIO coordinator available from the floating **Ask Kim** button throughout the prototype. She uses phrase matching against a curated catalog—not a generative AI service—and can answer only with approved copy and approved links.
 
-Planned guardrails include:
+The demonstration includes:
+
+- 30 controlled intents covering common ISP services, reporting destinations, state-agency referrals, news, and homepage concepts;
+- four visible quick actions for ISP services, reporting, careers, and other state services;
+- awareness of the current homepage concept and links for switching among all four concepts;
+- links to the seeded demonstration press releases and full `/news` archive;
+- session continuity when a visitor switches concepts; and
+- a friendly fallback that returns visitors to common topics or the normal site search.
+
+Kim's boundary is intentionally narrow:
 
 - clearly identifying itself as a demonstration assistant;
 - answering only from approved prototype content;
 - linking users to the source page for each answer;
-- refusing unsupported, emergency, investigative, legal, and general-purpose questions;
+- directing emergencies to 911 without offering emergency advice;
+- refusing unsupported, investigative, legal, and general-purpose questions;
+- never accepting reports or requesting personal information;
 - never presenting a demonstration alert as live information; and
 - providing a clear fallback to ISP contact and emergency channels.
+
+The panel is non-modal and does not open on an initial visit. It uses a labeled complementary region, real buttons and links, polite message announcements, visible focus, Escape-to-close behavior, no focus trap, and mobile-safe positioning. To preserve continuity without collecting questions, session storage retains only approved response identifiers and the user-selected open or closed state; typed questions are not persisted or sent to a server.
 
 See [CHANGELOG.md](CHANGELOG.md) for the current prototype history.

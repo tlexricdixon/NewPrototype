@@ -6,14 +6,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## Unreleased
 
+### Added
+
+- Added **Virtual Kim**, a persistent non-modal demonstration assistant shared by all four homepage concepts.
+- Added a curated catalog of 30 supported intents with phrase matching, approved responses, and approved destination URLs.
+- Added quick actions for finding ISP services, reporting destinations, careers, and other Illinois agencies.
+- Added controlled referrals for Secretary of State, ABE/DHS, IDES, Department of Revenue, and IDOT services.
+- Added current-concept awareness, concept-switching links, seeded press-release awareness, and a friendly unsupported-question fallback.
+- Added session continuity that stores approved response identifiers and panel state without persisting typed questions.
+
 ### Changed
 
 - Upgraded the application target framework from .NET 9 to .NET 10.
 - Updated local-development documentation to require the .NET 10 SDK.
 
-### Planned
+### Accessibility
 
-- Add the limited **Virtual Kim** PIO coordinator demonstration, grounded only in approved prototype pages and releases.
+- Implemented Kim as a labeled complementary region that does not open on an initial visit and does not trap focus.
+- Added keyboard operation, visible focus, an accessibly named close button, Escape-to-close support, polite message announcements, real buttons and links, mobile-safe layout, and forced-colors support.
+- Kept normal navigation and Google-enhanced site search available independently of Kim.
 
 ### Known limitations
 
