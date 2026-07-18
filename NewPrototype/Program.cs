@@ -73,4 +73,8 @@ app.UsePiranha(options =>
     options.UseIdentity();
 });
 
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
 app.Run();
