@@ -22,7 +22,7 @@ namespace NewPrototype.Controllers
             _api = api;
         }
 
-        [Route("/")]
+        [Route("/setup")]
         public IActionResult Index()
         {
             return View();

@@ -94,6 +94,50 @@ namespace NewPrototype.Controllers
         }
 
         /// <summary>
+        /// Gets the public archive of official press releases.
+        /// </summary>
+        [Route("press-releases")]
+        public async Task<IActionResult> PressReleases(
+            Guid id,
+            int? year = null,
+            int? month = null,
+            int? page = null,
+            Guid? category = null,
+            Guid? tag = null,
+            bool draft = false)
+        {
+            try
+            {
+                var model = await _loader.GetPageAsync<PressReleaseArchive>(id, HttpContext.User, draft);
+                model.Archive = await _api.Archives.GetByIdAsync<PostInfo>(id, page, category, tag, year, month);
+                return View(model);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return Unauthorized();
+            }
+        }
+
+        /// <summary>
+        /// Renders an HTML-first Public Information Office press release.
+        /// </summary>
+        /// <param name="id">The unique post id.</param>
+        /// <param name="draft">Whether an authorized manager preview requested the draft.</param>
+        [Route("press-release")]
+        public async Task<IActionResult> PressRelease(Guid id, bool draft = false)
+        {
+            try
+            {
+                var model = await _loader.GetPostAsync<PressRelease>(id, HttpContext.User, draft);
+                return View(model);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return Unauthorized();
+            }
+        }
+
+        /// <summary>
         /// Saves the given comment and then redirects to the post.
         /// </summary>
         /// <param name="id">The unique post id</param>

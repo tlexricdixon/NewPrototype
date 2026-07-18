@@ -1,0 +1,51 @@
+@model PressReleaseArchive
+@{
+    Layout = "/Views/Shared/_PrototypeLayout.cshtml";
+    ViewData["Title"] = "Press Releases — Illinois State Police";
+    ViewData["Concept"] = "command";
+    ViewData["ConceptNumber"] = "1";
+}
+
+<div class="news-archive">
+    <header class="news-archive__header">
+        <p>Public Information Office</p>
+        <h1>Press Releases</h1>
+        <span>Official news and public information from the Illinois State Police.</span>
+    </header>
+
+    <section class="news-archive__list" aria-labelledby="latest-releases-title">
+        <div class="news-archive__list-heading">
+            <h2 id="latest-releases-title">Latest releases</h2>
+            <p>@Model.Archive.TotalPosts release@(Model.Archive.TotalPosts == 1 ? "" : "s")</p>
+        </div>
+
+        @if (Model.Archive.Posts.Count == 0)
+        {
+            <div class="news-archive__empty">
+                <h3>No press releases have been published.</h3>
+                <p>Published releases from the Public Information Office will appear here.</p>
+            </div>
+        }
+        else
+        {
+            <div class="news-list">
+                @foreach (var post in Model.Archive.Posts)
+                {
+                    <article class="news-list__item">
+                        <time datetime="@post.Published?.ToString("O")">
+                            @post.Published?.ToString("MMM d, yyyy")
+                        </time>
+                        <div>
+                            <h3><a href="@post.Permalink">@post.Title</a></h3>
+                            @if (!string.IsNullOrWhiteSpace(post.Excerpt))
+                            {
+                                <p>@Html.Raw(post.Excerpt)</p>
+                            }
+                        </div>
+                        <a class="news-list__action" href="@post.Permalink" aria-label="Read @post.Title">Read release <span aria-hidden="true">→</span></a>
+                    </article>
+                }
+            </div>
+        }
+    </section>
+</div>

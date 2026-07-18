@@ -4,8 +4,12 @@ using Piranha.AspNetCore.Identity.SQLite;
 using Piranha.AttributeBuilder;
 using Piranha.Data.EF.SQLite;
 using Piranha.Manager.Editor;
+using NewProto;
+using NewPrototype.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddA11yDefaults();
 
 builder.AddPiranha(options =>
 {
@@ -72,6 +76,8 @@ app.UsePiranha(options =>
     options.UseTinyMCE();
     options.UseIdentity();
 });
+
+await PressReleaseArchiveSeeder.EnsureCreatedAsync(app.Services);
 
 app.MapControllerRoute(
     name: "default",

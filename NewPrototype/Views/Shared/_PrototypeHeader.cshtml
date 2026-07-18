@@ -1,0 +1,49 @@
+@{
+    var conceptNumber = ViewData["ConceptNumber"]?.ToString() ?? "1";
+}
+<header class="prototype-header">
+    <div class="prototype-header__bar">
+        <a class="prototype-brand"
+           asp-controller="Home"
+           asp-action="Index"
+           a11y-label="Illinois State Police demo homepage"
+           a11y-hit-target="@A11yTargetSize.Enhanced">
+            <img src="~/img/ISP_Department Seal (Scaled).png"
+                 width="78"
+                 height="78"
+                 alt="" />
+            <span>
+                <strong>Illinois State Police</strong>
+                <small>Integrity · Service · Pride</small>
+            </span>
+        </a>
+
+        <button class="prototype-menu"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#prototypeNavigation"
+                aria-controls="prototypeNavigation"
+                aria-expanded="false"
+                aria-label="Open navigation">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </button>
+
+        <nav class="prototype-nav collapse" id="prototypeNavigation" aria-label="Primary navigation">
+            <a href="#service-categories">Services</a>
+            <a href="#about-menu">About ISP</a>
+            <a href="/news">News</a>
+            <a href="#agency-footer">Contact</a>
+            <a href="#" class="prototype-nav__search" a11y-label="Search this demonstration website">Search</a>
+        </nav>
+    </div>
+
+    <nav class="concept-switcher" aria-label="Homepage concept selector">
+        <span>Viewing concept @conceptNumber</span>
+        <a asp-controller="Home" asp-action="Index" aria-current="@(conceptNumber == "1" ? "page" : null)">1</a>
+        <a asp-controller="Home" asp-action="Index2" aria-current="@(conceptNumber == "2" ? "page" : null)">2</a>
+        <a asp-controller="Home" asp-action="Index3" aria-current="@(conceptNumber == "3" ? "page" : null)">3</a>
+        <a asp-controller="Home" asp-action="Index4" aria-current="@(conceptNumber == "4" ? "page" : null)">4</a>
+    </nav>
+</header>

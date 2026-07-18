@@ -1,0 +1,84 @@
+@model PressRelease
+@{
+    Layout = "/Views/Shared/_PrototypeLayout.cshtml";
+    ViewData["Title"] = $"{Model.Title} — Illinois State Police";
+    ViewData["Concept"] = "command";
+    ViewData["ConceptNumber"] = "1";
+
+    var published = Model.Published;
+    var contactName = Model.Contact?.Name?.Value;
+    var contactPhone = Model.Contact?.Phone?.Value;
+    var contactEmail = Model.Contact?.Email?.Value;
+    var contactTdd = Model.Contact?.Tdd?.Value;
+}
+
+<article class="press-release">
+    <header class="press-release__header">
+        <div class="press-release__heading">
+            <p class="press-release__label">@(Model.ReleaseLabel?.Value ?? "FOR IMMEDIATE RELEASE")</p>
+            <h1>@Model.Title</h1>
+            @if (published.HasValue)
+            {
+                <p class="press-release__date">
+                    Release date:
+                    <time datetime="@published.Value.ToString("O")">
+                        @published.Value.ToString("MMMM d, yyyy 'at' h:mm tt")
+                    </time>
+                </p>
+            }
+        </div>
+
+        <aside class="press-release__contact" aria-labelledby="press-contact-title">
+            <h2 id="press-contact-title">Media contact</h2>
+            @if (!string.IsNullOrWhiteSpace(contactName))
+            {
+                <p><strong>@contactName</strong></p>
+            }
+            @if (!string.IsNullOrWhiteSpace(contactPhone))
+            {
+                <p><a href="tel:@contactPhone">@contactPhone</a></p>
+            }
+            @if (!string.IsNullOrWhiteSpace(contactEmail))
+            {
+                <p><a href="mailto:@contactEmail">@contactEmail</a></p>
+            }
+            @if (!string.IsNullOrWhiteSpace(contactTdd))
+            {
+                <p>TDD: @contactTdd</p>
+            }
+        </aside>
+    </header>
+
+    @if (Model.PrimaryImage?.Media != null)
+    {
+        <figure class="press-release__image">
+            <img src="@Url.Content(WebApp.Media.ResizeImage(Model.PrimaryImage, 1200))"
+                 alt="@Model.PrimaryImage.Media.AltText" />
+        </figure>
+    }
+
+    <div class="press-release__content">
+        @if (!string.IsNullOrWhiteSpace(Model.Dateline?.Value))
+        {
+            <p class="press-release__dateline">@Model.Dateline.Value.ToUpperInvariant() —</p>
+        }
+
+        <div class="press-release__body">
+            @Html.Raw(Model.Body?.Value)
+        </div>
+
+        @if (!string.IsNullOrWhiteSpace(Model.LegalNotice?.Value))
+        {
+            <aside class="press-release__legal" aria-label="Legal notice">
+                @Model.LegalNotice.Value
+            </aside>
+        }
+
+        <p class="press-release__end" aria-label="End of release">###</p>
+    </div>
+
+    <footer class="press-release__footer">
+        <a href="/news">View all press releases</a>
+        <button type="button" onclick="window.print()">Print this release</button>
+    </footer>
+</article>

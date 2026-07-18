@@ -1,0 +1,31 @@
+@{
+    var concept = ViewData["Concept"]?.ToString() ?? "command";
+    var conceptNumber = ViewData["ConceptNumber"]?.ToString() ?? "1";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <title>@(ViewData["Title"] ?? $"ISP Homepage Concept {conceptNumber} — DEMO")</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/a11y-defaults.css" />
+    <link rel="stylesheet" href="~/css/prototypes.css" asp-append-version="true" />
+</head>
+<body class="prototype concept-@concept">
+    <a a11y-skip-link a11y-skip-target="content">Skip to main content</a>
+    <partial name="_DemoAmberAlert" />
+    <partial name="_PrototypeHeader" />
+
+    <main id="content" tabindex="-1">
+        @RenderBody()
+    </main>
+
+    <partial name="_PrototypeFooter" />
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/prototypes.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -4,6 +4,8 @@ using Piranha.Models;
 namespace NewPrototype.Models
 {
     [PageType(Title = "Standard archive", IsArchive = true)]
+    [PageTypeArchiveItem(typeof(StandardPost))]
+    [PageTypeArchiveItem(typeof(PressRelease))]
     public class StandardArchive : Page<StandardArchive>
     {
         /// <summary>
