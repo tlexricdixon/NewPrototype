@@ -1,21 +1,12 @@
 @{
-    ViewData["Title"] = "Home Page";
+    Layout = "/Views/Shared/_PrototypeLayout.cshtml";
+    ViewData["Concept"] = "command";
+    ViewData["ConceptNumber"] = "1";
 }
-@await Html.PartialAsync("_carousel")
-@await Html.PartialAsync("_featuredServices")
-@await Html.PartialAsync("_popularServices")
-@await Html.PartialAsync("_indexBody")
 
-@section Scripts {
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var carouselEl = document.getElementById('carouselExampleCaptions');
-            if (carouselEl && window.bootstrap && window.bootstrap.Carousel) {
-                new bootstrap.Carousel(carouselEl, {
-                    interval: 3000,
-                    ride: 'carousel'
-                });
-            }
-        });
-    </script>
-}
+<div class="concept-stage">
+    <partial name="_PrototypeReel" />
+    <partial name="_LatestNewsCard" />
+    <partial name="_ServiceCategories" />
+    <partial name="_AboutMenu" />
+</div>

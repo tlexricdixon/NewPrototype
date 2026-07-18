@@ -1,0 +1,46 @@
+@inject Piranha.IApi PiranhaApi
+@{
+    var site = await PiranhaApi.Sites.GetDefaultAsync();
+    var newsPage = site == null
+        ? null
+        : await PiranhaApi.Pages.GetBySlugAsync<PressReleaseArchive>("news", site.Id);
+    var archive = newsPage == null
+        ? null
+        : await PiranhaApi.Archives.GetByIdAsync<Piranha.Models.PostInfo>(newsPage.Id, 1);
+    var latestReleases = archive?.Posts.Take(3).ToList() ?? new List<Piranha.Models.PostInfo>();
+}
+
+<section class="latest-news" aria-labelledby="latest-news-title">
+    <div class="latest-news-card">
+        <header class="latest-news-card__header">
+            <div>
+                <p>Public Information Office</p>
+                <h2 id="latest-news-title">Latest News</h2>
+            </div>
+            <a href="/news">View all news <span aria-hidden="true">→</span></a>
+        </header>
+
+        @if (latestReleases.Count == 0)
+        {
+            <p class="latest-news-card__empty">Published press releases will appear here.</p>
+        }
+        else
+        {
+            <div class="latest-news-card__items">
+                @foreach (var release in latestReleases)
+                {
+                    <article>
+                        <time datetime="@release.Published?.ToString("O")">
+                            @release.Published?.ToString("MMM d, yyyy")
+                        </time>
+                        <h3><a href="@release.Permalink">@release.Title</a></h3>
+                        @if (!string.IsNullOrWhiteSpace(release.Excerpt))
+                        {
+                            <p>@Html.Raw(release.Excerpt)</p>
+                        }
+                    </article>
+                }
+            </div>
+        }
+    </div>
+</section>

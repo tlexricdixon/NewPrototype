@@ -30,12 +30,36 @@
             <span aria-hidden="true"></span>
         </button>
 
-        <nav class="prototype-nav collapse" id="prototypeNavigation" aria-label="Primary navigation">
-            <a href="#service-categories">Services</a>
-            <a href="#about-menu">About ISP</a>
-            <a href="/news">News</a>
-            <a href="#agency-footer">Contact</a>
-            <a href="#" class="prototype-nav__search" a11y-label="Search this demonstration website">Search</a>
+        <nav class="prototype-nav collapse" id="prototypeNavigation" aria-label="Primary navigation and site search">
+            <div class="prototype-nav__links">
+                <a href="#service-categories">Services</a>
+                <a href="#about-menu">About ISP</a>
+                <a href="/news">News</a>
+                <a href="#agency-footer">Contact</a>
+            </div>
+
+            <form class="prototype-search"
+                  action="https://www.google.com/search"
+                  method="get"
+                  role="search">
+                <input type="hidden" name="sitesearch" value="isp.illinois.gov" />
+                <label class="visually-hidden" for="prototype-search-input">Search the Illinois State Police website</label>
+                <div class="prototype-search__field">
+                    <span class="prototype-search__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" focusable="false">
+                            <circle cx="11" cy="11" r="6.5"></circle>
+                            <path d="m16 16 4.25 4.25"></path>
+                        </svg>
+                    </span>
+                    <input id="prototype-search-input"
+                           name="q"
+                           type="search"
+                           placeholder="How can we help you?"
+                           autocomplete="off" />
+                    <span class="prototype-search__provider" aria-label="Enhanced by Google">Enhanced by <strong>Google</strong></span>
+                    <button type="submit">Search</button>
+                </div>
+            </form>
         </nav>
     </div>
 
