@@ -169,5 +169,46 @@ namespace NewPrototype.Controllers
                 return Unauthorized();
             }
         }
+        /// <summary>
+        /// Renders the Citizen Resources landing page and its published children.
+        /// </summary>
+        [Route("citizen-resources")]
+        public async Task<IActionResult> CitizenResources(Guid id, bool draft = false)
+        {
+            try
+            {
+                var model = await _loader.GetPageAsync<CitizenResource>(id, HttpContext.User, draft);
+                var pages = await _api.Pages.GetAllAsync<PageInfo>(model.SiteId);
+
+                model.Children = pages
+                    .Where(page => page.ParentId == model.Id && !page.IsHidden && page.Published.HasValue)
+                    .OrderBy(page => page.SortOrder)
+                    .ThenBy(page => page.NavigationTitle ?? page.Title)
+                    .ToList();
+
+                return View(model);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return Unauthorized();
+            }
+        }
+
+        /// <summary>
+        /// Renders any reusable page beneath the Citizen Resources section.
+        /// </summary>
+        [Route("citizen-resource")]
+        public async Task<IActionResult> CitizenResource(Guid id, bool draft = false)
+        {
+            try
+            {
+                var model = await _loader.GetPageAsync<CitizenResourcePage>(id, HttpContext.User, draft);
+                return View(model);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return Unauthorized();
+            }
+        }
     }
 }

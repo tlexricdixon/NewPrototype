@@ -1,0 +1,65 @@
+@model CitizenResource
+@{
+    Layout = "/Views/Shared/_PrototypeLayout.cshtml";
+    ViewData["Title"] = !string.IsNullOrWhiteSpace(Model.MetaTitle)
+        ? Model.MetaTitle
+        : $"{Model.Title} — Illinois State Police";
+    ViewData["Concept"] = "command";
+    ViewData["ConceptNumber"] = "1";
+}
+
+<div class="resource-section">
+    <nav class="resource-breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+            <li><a href="/">Home</a></li>
+            <li aria-current="page">@Model.Title</li>
+        </ol>
+    </nav>
+
+    <header class="resource-section__header">
+        <p>Public services</p>
+        <h1>@Model.Title</h1>
+        @if (!string.IsNullOrWhiteSpace(Model.Excerpt))
+        {
+            <div class="resource-section__intro">@Html.Raw(Model.Excerpt)</div>
+        }
+    </header>
+
+    @if (Model.Children.Count > 0)
+    {
+        <section class="resource-directory" aria-labelledby="resource-directory-title">
+            <div class="resource-directory__heading">
+                <h2 id="resource-directory-title">Find a citizen resource</h2>
+                <p>Select a topic to find information, forms, and services.</p>
+            </div>
+
+            <div class="resource-grid">
+                @foreach (var resource in Model.Children)
+                {
+                    <article class="resource-card">
+                        <h3><a href="@resource.Permalink">@(resource.NavigationTitle ?? resource.Title)</a></h3>
+                        @if (!string.IsNullOrWhiteSpace(resource.Excerpt))
+                        {
+                            <p>@Html.Raw(resource.Excerpt)</p>
+                        }
+                        <a class="resource-card__action" href="@resource.Permalink" aria-label="View @resource.Title">
+                            View resource <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+                }
+            </div>
+        </section>
+    }
+
+    @if (Model.Blocks.Count > 0)
+    {
+        <section class="resource-content" aria-label="Additional Citizen Resources information">
+            @foreach (var block in Model.Blocks)
+            {
+                <div class="block @block.CssName()">
+                    @Html.DisplayFor(m => block, block.GetType().Name)
+                </div>
+            }
+        </section>
+    }
+</div>
