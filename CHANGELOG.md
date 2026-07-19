@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Added one reusable `CitizenResourcePage` content type and shared detail template for resource pages throughout the section.
 - Added an idempotent startup seeder for the Citizen Resources landing page and starter Forms, Domestic Violence Resources, Scam and Fraud Resources, and Transparency pages.
 - Added responsive section, directory-card, breadcrumb, content, optional-image, and mobile layouts.
+- Added representative Citizen Resources overview, CALEA accreditation, and Language Access Plan copy to bring the landing-page demonstration closer to the current public site.
 - Added **Virtual Kim**, a persistent non-modal demonstration assistant shared by all four homepage concepts.
 - Added a curated catalog of 30 supported intents with phrase matching, approved responses, and approved destination URLs.
 - Added quick actions for finding ISP services, reporting destinations, careers, and other Illinois agencies.
@@ -23,6 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Updated the primary prototype navigation to link directly to Citizen Resources.
 - Documented the Citizen Resources authoring workflow so editors can add pages beneath the section without requiring new controllers or Razor views.
+- Marked the imported Citizen Resources material as demonstration reference copy that requires content-owner review before production use.
 - Upgraded the application target framework from .NET 9 to .NET 10.
 - Updated local-development documentation to require the .NET 10 SDK.
 

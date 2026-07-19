@@ -80,6 +80,8 @@ On startup, the demonstration seeder creates the News archive and four clearly l
 
 The starter hierarchy includes Forms, Domestic Violence Resources, Scam and Fraud Resources, and Transparency. Editors can revise or remove the demonstration copy. One reusable page type renders every child; a new Razor view or controller action is not required for each resource.
 
+The landing page also includes representative overview, CALEA accreditation, and Language Access Plan text adapted from the current public Citizen Resources page so the prototype has realistic content volume. This is demonstration reference copy, not a validated content migration. Content owners must review its dates, links, legal language, and current accuracy before production use.
+
 ## Accessibility notes
 
 Accessibility is treated as a design constraint rather than a cleanup step. Current work includes:
