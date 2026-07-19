@@ -2002,6 +2002,210 @@ body.prototype img {
     }
 }
 
+.resource-section,
+.resource-page {
+    margin: 0 auto;
+    max-width: var(--content-width);
+    padding: 1.25rem var(--space-page) clamp(4rem, 8vw, 7rem);
+}
+
+.resource-breadcrumbs {
+    border-block-end: 1px solid var(--line);
+    font-size: 0.78rem;
+    font-weight: 750;
+    margin-bottom: clamp(2rem, 5vw, 4rem);
+    padding-block-end: 1rem;
+}
+
+.resource-breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.resource-breadcrumbs li:not(:last-child)::after {
+    content: "/";
+    margin-inline-start: 0.45rem;
+    opacity: 0.45;
+}
+
+.resource-breadcrumbs a {
+    color: var(--state-blue);
+    text-underline-offset: 0.2em;
+}
+
+.resource-section__header,
+.resource-page__header {
+    background: var(--state-blue);
+    color: var(--isp-white);
+    padding: clamp(2rem, 6vw, 5.5rem);
+}
+
+.resource-section__header > p,
+.resource-page__header > div > p {
+    color: var(--isp-tan);
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    margin: 0 0 0.85rem;
+    text-transform: uppercase;
+}
+
+.resource-section__header h1,
+.resource-page__header h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.3rem, 6vw, 5.5rem);
+    letter-spacing: -0.035em;
+    line-height: 0.98;
+    margin: 0;
+    max-width: 13ch;
+}
+
+.resource-section__intro,
+.resource-page__intro {
+    font-size: clamp(1rem, 1.7vw, 1.25rem);
+    line-height: 1.65;
+    margin-top: 1.5rem;
+    max-width: 68ch;
+}
+
+.resource-section__intro p,
+.resource-page__intro p {
+    margin: 0;
+}
+
+.resource-directory {
+    padding-block: clamp(3rem, 6vw, 5.5rem);
+}
+
+.resource-directory__heading {
+    align-items: end;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.resource-directory__heading h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    letter-spacing: -0.025em;
+    margin: 0;
+}
+
+.resource-directory__heading p {
+    margin: 0;
+    max-width: 42ch;
+}
+
+.resource-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.resource-card {
+    border: 1px solid var(--line);
+    border-block-start: 5px solid var(--isp-bronze);
+    display: flex;
+    flex-direction: column;
+    min-height: 245px;
+    padding: clamp(1.4rem, 3vw, 2.25rem);
+}
+
+.resource-card h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+    line-height: 1.15;
+    margin: 0 0 0.8rem;
+}
+
+.resource-card h3 a {
+    text-decoration: none;
+}
+
+.resource-card h3 a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.09em;
+    text-underline-offset: 0.16em;
+}
+
+.resource-card > p {
+    line-height: 1.6;
+    margin: 0 0 1.25rem;
+}
+
+.resource-card__action {
+    color: var(--state-blue) !important;
+    font-size: 0.78rem;
+    font-weight: 900;
+    margin-top: auto;
+    text-transform: uppercase;
+    text-underline-offset: 0.2em;
+}
+
+.resource-content,
+.resource-page__body {
+    font-size: 1.04rem;
+    line-height: 1.75;
+    margin: 0 auto;
+    max-width: 780px;
+    padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+
+.resource-content h2,
+.resource-page__body h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    margin: 2rem 0 0.75rem;
+}
+
+.resource-page__header--with-image {
+    align-items: center;
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 4rem);
+    grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr);
+}
+
+.resource-page__header img {
+    aspect-ratio: 8 / 5;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.resource-page__footer {
+    border-block-start: 1px solid var(--line);
+    margin: 0 auto;
+    max-width: 780px;
+    padding-block-start: 1.25rem;
+}
+
+.resource-page__footer a {
+    color: var(--state-blue) !important;
+    font-weight: 850;
+    text-underline-offset: 0.2em;
+}
+
+@media (max-width: 767.98px) {
+    .resource-directory__heading {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .resource-grid,
+    .resource-page__header--with-image {
+        grid-template-columns: 1fr;
+    }
+
+    .resource-card {
+        min-height: 0;
+    }
+}
+
 @media print {
     .demo-amber,
     .prototype-header,

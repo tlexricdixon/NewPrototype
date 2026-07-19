@@ -82,6 +82,7 @@ app.UsePiranha(options =>
 });
 
 await PressReleaseArchiveSeeder.EnsureCreatedAsync(app.Services);
+await CitizenResourcesSeeder.EnsureCreatedAsync(app.Services);
 
 app.MapControllerRoute(
     name: "default",

@@ -12,6 +12,7 @@ This repository contains four responsive homepage concepts for an Illinois State
 - A responsive photo reel with pause and resume controls.
 - A two-level agency and State of Illinois footer.
 - An HTML-first press-release type and public news archive.
+- A hierarchical Citizen Resources section with reusable child pages.
 - Homepage cards populated from the latest published Piranha releases.
 - A Google-enhanced search form restricted to `isp.illinois.gov`.
 - Virtual Kim, a controlled 30-intent demonstration assistant using approved responses and destinations only.
@@ -50,6 +51,7 @@ The public homepage opens directly without requiring a manager login. The Piranh
 | `/Home/Index3` | Homepage Concept 3 — Editorial |
 | `/Home/Index4` | Homepage Concept 4 — Civic |
 | `/news` | Published press-release archive |
+| `/citizen-resources` | CMS-managed Citizen Resources section and child-page directory |
 | `/manager` | Piranha content manager |
 
 ## Press-release workflow
@@ -65,6 +67,18 @@ The `PressRelease` content type is designed for a PIO staff member working under
 Once published, the release becomes an accessible HTML page, appears in `/news`, and can appear automatically in each homepage's Latest News card. No PDF is required.
 
 On startup, the demonstration seeder creates the News archive and four clearly labeled fictional good-news releases when they do not already exist.
+
+## Citizen Resources workflow
+
+`Citizen Resources` is a parent page in the Piranha site tree. Its published, visible child pages appear automatically as cards on `/citizen-resources`.
+
+1. Sign in at `/manager`.
+2. Create a page using **Citizen Resource page**.
+3. Place it beneath **Citizen Resources** in the site tree.
+4. Add its title, summary, body blocks, and optional primary image.
+5. Publish the page.
+
+The starter hierarchy includes Forms, Domestic Violence Resources, Scam and Fraud Resources, and Transparency. Editors can revise or remove the demonstration copy. One reusable page type renders every child; a new Razor view or controller action is not required for each resource.
 
 ## Accessibility notes
 

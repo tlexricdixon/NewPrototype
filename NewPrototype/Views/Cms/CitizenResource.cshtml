@@ -1,0 +1,49 @@
+@model CitizenResourcePage
+@{
+    Layout = "/Views/Shared/_PrototypeLayout.cshtml";
+    ViewData["Title"] = !string.IsNullOrWhiteSpace(Model.MetaTitle)
+        ? Model.MetaTitle
+        : $"{Model.Title} — Illinois State Police";
+    ViewData["Concept"] = "command";
+    ViewData["ConceptNumber"] = "1";
+    var hasImage = Model.PrimaryImage.HasValue;
+}
+
+<article class="resource-page">
+    <nav class="resource-breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/citizen-resources">Citizen Resources</a></li>
+            <li aria-current="page">@Model.Title</li>
+        </ol>
+    </nav>
+
+    <header class="resource-page__header @(hasImage ? "resource-page__header--with-image" : null)">
+        <div>
+            <p>Citizen Resources</p>
+            <h1>@Model.Title</h1>
+            @if (!string.IsNullOrWhiteSpace(Model.Excerpt))
+            {
+                <div class="resource-page__intro">@Html.Raw(Model.Excerpt)</div>
+            }
+        </div>
+        @if (hasImage)
+        {
+            <img src="@Url.Content(WebApp.Media.ResizeImage(Model.PrimaryImage, 800, 500))"
+                 alt="@(Model.PrimaryImage.Media?.AltText ?? string.Empty)" />
+        }
+    </header>
+
+    <div class="resource-page__body">
+        @foreach (var block in Model.Blocks)
+        {
+            <div class="block @block.CssName()">
+                @Html.DisplayFor(m => block, block.GetType().Name)
+            </div>
+        }
+    </div>
+
+    <footer class="resource-page__footer">
+        <a href="/citizen-resources"><span aria-hidden="true">←</span> All Citizen Resources</a>
+    </footer>
+</article>
