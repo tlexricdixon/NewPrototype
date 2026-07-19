@@ -18,4 +18,5 @@ public class CitizenResource : Page<CitizenResource>
     /// This is populated at request time and is not editor-managed content.
     /// </summary>
     public IList<PageInfo> Children { get; set; } = new List<PageInfo>();
+
 }
