@@ -82,6 +82,8 @@ The starter hierarchy includes Forms, Domestic Violence Resources, Scam and Frau
 
 The landing page also includes representative overview, CALEA accreditation, and Language Access Plan text adapted from the current public Citizen Resources page so the prototype has realistic content volume. This is demonstration reference copy, not a validated content migration. Content owners must review its dates, links, legal language, and current accuracy before production use.
 
+The tracked demonstration SQLite database includes the editor-authored content currently published on the Forms, Domestic Violence Resources, Scam and Fraud Resources, and Transparency child pages. Keeping `piranha.db` with the prototype allows another checkout to reproduce the reviewed demo; production environments must instead use approved persistent storage, backups, deployment-safe migrations, and formal content governance.
+
 ## Accessibility notes
 
 Accessibility is treated as a design constraint rather than a cleanup step. Current work includes:

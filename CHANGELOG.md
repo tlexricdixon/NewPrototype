@@ -22,6 +22,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Expanded the CMS-managed Forms, Domestic Violence Resources, Scam and Fraud Resources, and Transparency child pages with representative demonstration content.
+- Checkpointed the editor-authored Citizen Resources updates into the tracked SQLite database so the complete demo content travels with the repository.
 - Updated the primary prototype navigation to link directly to Citizen Resources.
 - Documented the Citizen Resources authoring workflow so editors can add pages beneath the section without requiring new controllers or Razor views.
 - Marked the imported Citizen Resources material as demonstration reference copy that requires content-owner review before production use.
