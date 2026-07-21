@@ -84,6 +84,8 @@ The landing page also includes representative overview, CALEA accreditation, and
 
 The tracked demonstration SQLite database includes the editor-authored content currently published on the Forms, Domestic Violence Resources, Scam and Fraud Resources, and Transparency child pages. Keeping `piranha.db` with the prototype allows another checkout to reproduce the reviewed demo; production environments must instead use approved persistent storage, backups, deployment-safe migrations, and formal content governance.
 
+Citizen Resource detail pages allow structured content such as wide tables to use the available page width, while direct paragraphs and lists remain constrained to a readable line length. The shared template applies this behavior to every resource page without page-specific layout code.
+
 ## Accessibility notes
 
 Accessibility is treated as a design constraint rather than a cleanup step. Current work includes:

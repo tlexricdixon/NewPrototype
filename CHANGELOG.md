@@ -22,6 +22,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Widened Citizen Resource page bodies for tables and other structured content while retaining a readable measure for ordinary paragraphs and lists.
+- Expanded the Citizen Resource return-navigation divider to align with the full content area.
 - Expanded the CMS-managed Forms, Domestic Violence Resources, Scam and Fraud Resources, and Transparency child pages with representative demonstration content.
 - Checkpointed the editor-authored Citizen Resources updates into the tracked SQLite database so the complete demo content travels with the repository.
 - Updated the primary prototype navigation to link directly to Citizen Resources.
