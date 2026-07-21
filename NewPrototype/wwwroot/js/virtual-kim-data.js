@@ -2,14 +2,16 @@
     'use strict';
 
     var ispContact = 'https://isp.illinois.gov/Home/ContactISP';
+    var citizenResources = '/citizen-resources';
 
     window.VirtualKimCatalog = Object.freeze({
-        openingMessage: "Hi, I’m Kim. I can help you find an ISP service, explore this homepage concept, or point you to another Illinois agency. What are you looking for?",
+        openingMessage: "Hi, I’m Kim. I can take you to Citizen Resources, help you find an ISP service, explore this homepage concept, or point you to another Illinois agency. What are you looking for?",
         fallbackMessage: "I’m not sure which service you need. Try choosing one of these common topics, or use the site search.",
         quickActions: Object.freeze({
             'services-menu': {
-                message: 'Here are common ISP services I can help you find.',
+                message: 'Start with the prototype Citizen Resources section, or choose one of these common official ISP services.',
                 links: [
+                    { label: 'Citizen Resources — in this prototype', href: citizenResources },
                     { label: 'FOID and concealed carry', href: 'https://isp.illinois.gov/Foid' },
                     { label: 'Crash reports', href: 'https://isp.illinois.gov/CrashReports' },
                     { label: 'Background checks', href: 'https://isp.illinois.gov/BureauOfIdentification' },
@@ -47,6 +49,18 @@
                 patterns: ['911', 'emergency', 'immediate danger', 'crime in progress', 'someone is hurt', 'call police now'],
                 message: 'If anyone is in immediate danger or a crime is in progress, call 911. Kim does not monitor incidents and cannot dispatch help.',
                 links: []
+            },
+            {
+                id: 'citizen-resources',
+                patterns: ['citizen resources', 'citizen resource', 'isp resources', 'public resources', 'public services', 'forms', 'domestic violence', 'scam and fraud', 'scam fraud', 'fraud resources', 'transparency'],
+                message: 'The prototype Citizen Resources section brings together CMS-managed public information, forms, safety resources, and transparency material.',
+                links: [
+                    { label: 'Open Citizen Resources', href: citizenResources },
+                    { label: 'Forms', href: citizenResources + '/forms' },
+                    { label: 'Domestic Violence Resources', href: citizenResources + '/domestic-violence' },
+                    { label: 'Scam and Fraud Resources', href: citizenResources + '/scam-fraud' },
+                    { label: 'Transparency', href: citizenResources + '/transparency' }
+                ]
             },
             {
                 id: 'concealed-carry',

@@ -15,7 +15,7 @@ This repository contains four responsive homepage concepts for an Illinois State
 - A hierarchical Citizen Resources section with reusable child pages.
 - Homepage cards populated from the latest published Piranha releases.
 - A Google-enhanced search form restricted to `isp.illinois.gov`.
-- Virtual Kim, a controlled 30-intent demonstration assistant using approved responses and destinations only.
+- Virtual Kim, a controlled 31-intent demonstration assistant using approved responses and destinations only.
 - Shared accessibility defaults for skip links, focus indicators, touch targets, semantic labels, reduced motion, color contrast, and Windows High Contrast Mode.
 
 ## Technology
@@ -118,10 +118,11 @@ These measures do not constitute a complete WCAG conformance claim. The prototyp
 
 The demonstration includes:
 
-- 30 controlled intents covering common ISP services, reporting destinations, state-agency referrals, news, and homepage concepts;
-- four visible quick actions for ISP services, reporting, careers, and other state services;
+- 31 controlled intents covering Citizen Resources, common ISP services, reporting destinations, state-agency referrals, news, and homepage concepts;
+- four visible quick actions for Citizen Resources and ISP services, reporting, careers, and other state services;
 - awareness of the current homepage concept and links for switching among all four concepts;
 - links to the seeded demonstration press releases and full `/news` archive;
+- in-app links to the Citizen Resources landing page and its Forms, Domestic Violence, Scam and Fraud, and Transparency children;
 - session continuity when a visitor switches concepts; and
 - a friendly fallback that returns visitors to common topics or the normal site search.
 
