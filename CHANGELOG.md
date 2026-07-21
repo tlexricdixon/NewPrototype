@@ -19,9 +19,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Added controlled referrals for Secretary of State, ABE/DHS, IDES, Department of Revenue, and IDOT services.
 - Added current-concept awareness, concept-switching links, seeded press-release awareness, and a friendly unsupported-question fallback.
 - Added session continuity that stores approved response identifiers and panel state without persisting typed questions.
+- Added a controlled Virtual Kim intent with in-app links to Citizen Resources and its four CMS-managed child pages.
 
 ### Changed
 
+- Widened Citizen Resource page bodies for tables and other structured content while retaining a readable measure for ordinary paragraphs and lists.
+- Expanded the Citizen Resource return-navigation divider to align with the full content area.
+- Changed Kim’s first quick action to surface the in-app Citizen Resources section before legacy external service destinations.
 - Expanded the CMS-managed Forms, Domestic Violence Resources, Scam and Fraud Resources, and Transparency child pages with representative demonstration content.
 - Checkpointed the editor-authored Citizen Resources updates into the tracked SQLite database so the complete demo content travels with the repository.
 - Updated the primary prototype navigation to link directly to Citizen Resources.
