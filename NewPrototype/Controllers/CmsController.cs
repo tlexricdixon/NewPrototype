@@ -146,6 +146,11 @@ namespace NewPrototype.Controllers
         [Route("post/comment")]
         public async Task<IActionResult> SavePostComment(SaveCommentModel commentModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             try
             {
                 var model = await _loader.GetPostAsync<StandardPost>(commentModel.Id, HttpContext.User);
@@ -154,7 +159,7 @@ namespace NewPrototype.Controllers
                 var comment = new PostComment
                 {
                     IpAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString(),
-                    UserAgent = Request.Headers.ContainsKey("User-Agent") ? Request.Headers["User-Agent"].ToString() : "",
+                    UserAgent = Request.Headers.TryGetValue("User-Agent", out Microsoft.Extensions.Primitives.StringValues value) ? value.ToString() : "",
                     Author = commentModel.CommentAuthor,
                     Email = commentModel.CommentEmail,
                     Url = commentModel.CommentUrl,
