@@ -4,6 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>annotations</Nullable>
+    <UserSecretsId>c0e58eec-91d3-4ddd-a2ac-be4e46a3d007</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +12,7 @@
     <PackageReference Include="Piranha.AspNetCore" Version="12.2.0" />
     <PackageReference Include="Piranha.AspNetCore.Identity.SQLServer" Version="12.2.0" />
     <PackageReference Include="Piranha.AttributeBuilder" Version="12.2.0" />
+    <PackageReference Include="Piranha.Azure.BlobStorage" Version="12.2.0" />
     <PackageReference Include="Piranha.Data.EF.SQLServer" Version="12.2.0" />
     <PackageReference Include="Piranha.AspNetCore.Identity.SQLite" Version="12.2.0" />
     <PackageReference Include="Piranha.Data.EF.SQLite" Version="12.2.0" />
